@@ -1,11 +1,5 @@
 import { calculateDiscount } from "../utils/discountCalculator.js";
 export class Product {
-    id;
-    title;
-    price;
-    category;
-    description;
-    discountPercentage;
     constructor(data) {
         this.id = data.id;
         this.title = data.title;
