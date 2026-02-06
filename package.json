@@ -13,5 +13,16 @@
   "devDependencies": {
     "@types/node": "^25.1.0",
     "typescript": "^5.9.3"
-  }
+  },
+  "dependencies": {
+    "undici-types": "^7.16.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owlthinkabtit/SBA-6.git"
+  },
+  "bugs": {
+    "url": "https://github.com/owlthinkabtit/SBA-6/issues"
+  },
+  "homepage": "https://github.com/owlthinkabtit/SBA-6#readme"
 }
