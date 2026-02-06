@@ -1,29 +1,29 @@
 import { calculateDiscount} from "../utils/discountCalculator.js";
 
+export interface ProductData {
+  id: number;
+  title: string;
+  price: number;
+  category: string;
+  description: string;
+  discountPercentage?: number;
+}
 
 export class Product {
   public id: number;
   public title: string;
   public price: number;
-  public discountPercentage: number;
   public category: string;
   public description: string;
+  public discountPercentage: number;
 
-  constructor(
-    id: number,
-    title: string,
-    price: number,
-    discountPercentage: number,
-    category: string,
-    description: string,
-  ) {
-    this.id = id;
-    this.title = title;
-    this.price = price;
-    this.discountPercentage = discountPercentage;
-    this.category = category;
-    this.description = description;
-
+  constructor(data: ProductData) {
+    this.id = data.id;
+    this.title = data.title;
+    this.price = data.price;
+    this.category = data.category;
+    this.description = data.description;
+    this.discountPercentage = data.discountPercentage || 0;
   }
 
   displayDetails(): void {
@@ -35,7 +35,7 @@ export class Product {
   
   }
 
-  getPricedWithDiscount(): number {
+  getPriceWithDiscount(): number {
     const discountAmount = calculateDiscount(
       this.price,
       this.discountPercentage
