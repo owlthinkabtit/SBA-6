@@ -3,16 +3,16 @@ export class Product {
     id;
     title;
     price;
-    discountPercentage;
     category;
     description;
-    constructor(id, title, price, discountPercentage, category, description) {
-        this.id = id;
-        this.title = title;
-        this.price = price;
-        this.discountPercentage = discountPercentage;
-        this.category = category;
-        this.description = description;
+    discountPercentage;
+    constructor(data) {
+        this.id = data.id;
+        this.title = data.title;
+        this.price = data.price;
+        this.category = data.category;
+        this.description = data.description;
+        this.discountPercentage = data.discountPercentage || 0;
     }
     displayDetails() {
         console.log(`Product: ${this.title}`);
@@ -21,7 +21,7 @@ export class Product {
         console.log(`Discount: ${this.discountPercentage}%`);
         console.log(`Description: ${this.description}`);
     }
-    getPricedWithDiscount() {
+    getPriceWithDiscount() {
         const discountAmount = calculateDiscount(this.price, this.discountPercentage);
         return this.price - discountAmount;
     }
